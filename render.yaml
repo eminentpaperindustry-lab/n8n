@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: mera-n8n
+    runtime: image
+    repo: https://github.com/eminentpaperindustry-lab/n8n
+    plan: free
+    region: oregon
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: admin123
+    disk:
+      name: n8n-data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
